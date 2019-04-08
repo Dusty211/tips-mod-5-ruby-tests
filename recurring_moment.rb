@@ -22,7 +22,7 @@ class RecurringMoment
       # find the number of months between start date and target date:
       months_diff = (date.year * 12 + date.month) - (@start.year * 12 + @start.month)
 
-      #check for different number of days in each month by advancing and checking for day equality
+      #check for equal day while taking 29,30,31 problem into account
       if (@start.advance(months: months_diff).day != date.day)
         return false
 
@@ -63,27 +63,27 @@ class RecurringMoment
 
 #ORIGINAL SOLUTION
 #############################################
-#
-#     new_date = @start
-#     next_interval = @interval
-#
-#     while new_date <= date
-#       if new_date == date
-#         return true
-#       end
-#
-#       if @period == 'monthly'
-#         new_date = @start.advance(months: next_interval)
-#       elsif @period == 'weekly'
-#         new_date = @start.advance(weeks: next_interval)
-#       elsif @period == 'daily'
-#         new_date = @start.advance(days: next_interval)
-#       end
-#       next_interval += @interval
-#     end
-#
-#     return false
-#
+
+    # new_date = @start
+    # next_interval = @interval
+    #
+    # while new_date <= date
+    #   if new_date == date
+    #     return true
+    #   end
+    #
+    #   if @period == 'monthly'
+    #     new_date = @start.advance(months: next_interval)
+    #   elsif @period == 'weekly'
+    #     new_date = @start.advance(weeks: next_interval)
+    #   elsif @period == 'daily'
+    #     new_date = @start.advance(days: next_interval)
+    #   end
+    #   next_interval += @interval
+    # end
+    #
+    # return false
+
 #############################################
 
 
