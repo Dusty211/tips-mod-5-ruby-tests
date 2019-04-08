@@ -55,7 +55,7 @@ class RecurringMoment
       else
         return false
       end
-end
+    end
 
 #############################################
 
