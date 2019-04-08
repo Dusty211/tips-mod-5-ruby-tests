@@ -14,7 +14,7 @@ class RecurringMoment
     if @period == 'monthly'
       # binding.pry
       months_diff = (date.year * 12 + date.month) - (@start.year * 12 + @start.month)
-      if (date.day != @start.day) && (@start.advance(months: months_diff).day != date.day)
+      if (@start.advance(months: months_diff).day != date.day)
         return false
       elsif months_diff % @interval == 0
         return true
